@@ -37,4 +37,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void pall(stack_t **stack);
+void push(stack_t **head, int number);
+
 #endif
