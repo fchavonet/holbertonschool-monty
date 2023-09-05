@@ -6,7 +6,7 @@
  * @head: pointer to the head of the stack.
  * @number: the integer number to push onto the stack.
  */
-void push(stack_t **head, int number)
+void push(stack_t **head, unsigned int number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
