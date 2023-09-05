@@ -1,55 +1,48 @@
 #include "monty.h"
 
 /**
- * is_value_int - test
+ * is_int - check if string received is int or not
  *
- * @line_number: test
+ * @opcode: string to check
  *
- * Return: 0
+ * Return: -1 if sring is not int or 1 if yes
  */
-int is_value_int(unsigned int line_number)
+int is_int(char *opcode)
 {
-	char *string = NULL;
+	int i;
 
-	string = strtok(NULL, " \t\n");
+	if (opcode == NULL)
+		return (-1);
 
-	int value = 0;
-	int index = 0;
-
-	if (string == NULL)
+	for (i = 0; opcode[i] != '\0'; i++)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		if (opcode[i] != '-' && isdigit(opcode[i]) == 0)
+			return (-1);
 	}
-
-	while (string[index] != '\0')
-	{
-		if (*string < '0' || *string > '9')
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
-			free(string);
-			exit(EXIT_FAILURE);
-		}
-		index++;
-	}
-
-	value = atoi(string);
-
-	return (value);
+	return (1);
 }
 
 /**
  * push - Pushes an element onto the stack.
  *
- * @head: pointer to the head of the stack.
- * @line_number: test
+ * @stack: a pointer to the top of the stack.
+ * @line_number: the line number being executed (not used here).
  */
-void push(stack_t **head, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = NULL;
-	int value = is_value_int(line_number);
+	stack_t *new_node = malloc(sizeof(stack_t));
+	char *number_string = NULL;
+	int number = 0;
 
-	new_node = malloc(sizeof(stack_t));
+	number_string = strtok(NULL, " \t\n");
+
+	if (number_string == NULL || is_int(number_string) == -1)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	number = atoi(number_string);
 
 	if (new_node == NULL)
 	{
@@ -57,18 +50,18 @@ void push(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = value;
+	new_node->n = number;
 	new_node->prev = NULL;
 
-	if (*head == NULL)
+	if (*stack == NULL)
 	{
 		new_node->next = NULL;
-		*head = new_node;
+		*stack = new_node;
 	}
 	else
 	{
-		new_node->next = *head;
-		(*head)->prev = new_node;
-		*head = new_node;
+		new_node->next = *stack;
+		(*stack)->prev = new_node;
+		*stack = new_node;
 	}
 }

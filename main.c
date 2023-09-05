@@ -1,65 +1,6 @@
 #include "monty.h"
 
 /**
- * free_all - Frees memory allocated for the stack and a line.
- *
- * @stack: a pointer to the top of the stack.
- * @line: a line of Monty bytecode.
- */
-void free_all(stack_t *stack, char *line)
-{
-	stack_t *temp_stack = NULL;
-
-	free(line);
-
-	while (stack != NULL)
-	{
-		temp_stack = stack;
-
-		stack = stack->next;
-		free(temp_stack);
-	}
-}
-
-/**
- * execute_instruction - Executes Monty bytecode instructions.
- *
- * @stack: a pointer to the top of the stack.
- * @line: a line of Monty bytecode.
- * @line_number: the line number being executed.
- *
- * Return: 0 if success.
- */
-int execute_instruction(stack_t **stack, char *line, unsigned int line_number)
-{
-	int index = 0;
-	char *opcode = strtok(line, " \t\n");
-
-	if (opcode == NULL)
-		exit(EXIT_FAILURE);
-
-	instruction_t instructions[] = {
-		{"push", push},
-		{"pall", pall},
-		{NULL, NULL}
-	};
-
-	while (instructions[index].opcode != NULL)
-	{
-		if (strcmp(opcode, instructions[index].opcode) == 0)
-		{
-			instructions[index].f(stack, line_number);
-
-			return (0);
-		}
-		index++;
-	}
-
-	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
-	exit(EXIT_FAILURE);
-}
-
-/**
  * main - Entry point of the programm.
  *
  * @argc: the number of command-line arguments.
@@ -73,6 +14,7 @@ int main(int argc, char *argv[])
 	char *line = NULL;
 	size_t length = 0;
 	unsigned int line_number = 0;
+	char *opcode = NULL;
 
 	if (argc != 2)
 	{
@@ -88,14 +30,18 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&line, &length, file) != -1)
+	while (getline(&line, &length, file) != EOF)
 	{
 		line_number++;
-		execute_instruction(&stack, line, line_number);
+
+		opcode = strtok(line, " \t\n");
+		exec_instructions(&stack, opcode, line_number);
 	}
 
 	fclose(file);
-	free_all(stack, line);
+	if (opcode != NULL)
+		free(opcode);
+	free_stack(stack);
 
 	return (0);
 }
