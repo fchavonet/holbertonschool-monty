@@ -55,7 +55,7 @@ int execute_instruction(stack_t **stack, char *line, unsigned int line_number)
 		index++;
 	}
 
-	fprintf(stderr, "L%u usage: unknown instruction %s\n", line_number, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
