@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * is_int - check if string received is int or not
+ * is_digit - Checks if a string represents an integer.
  *
- * @opcode: string to check
+ * @opcode: the string to check.
  *
- * Return: -1 if sring is not int or 1 if yes
+ * Return: 1 if the string is an integer, -1 otherwise.
  */
-int is_int(char *opcode)
+int is_digit(char *opcode)
 {
 	int i;
 
@@ -36,7 +36,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	number_string = strtok(NULL, " \t\n");
 
-	if (number_string == NULL || is_int(number_string) == -1)
+	if (number_string == NULL || is_digit(number_string) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

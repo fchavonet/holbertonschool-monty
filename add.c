@@ -17,6 +17,6 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 
 	current_node = (*stack)->next;
-	current_node->n += (*stack)->n;
+	current_node->n = current_node->n + (*stack)->n;
 	pop(stack, line_number);
 }
