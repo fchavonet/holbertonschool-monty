@@ -18,6 +18,7 @@ int exec_instructions(stack_t **stack, char *opcode, unsigned int line_number)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"add", add},
 		{"nop", nop},
 		{NULL, NULL}
 	};
