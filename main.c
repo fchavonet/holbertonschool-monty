@@ -33,9 +33,11 @@ int main(int argc, char *argv[])
 	while (getline(&line, &length, file) != EOF)
 	{
 		line_number++;
-
 		opcode = strtok(line, " \t\n");
-		exec_instructions(&stack, opcode, line_number);
+		if (opcode == NULL)
+			line_number++;
+		else
+			exec_instructions(&stack, opcode, line_number);
 	}
 
 	fclose(file);
