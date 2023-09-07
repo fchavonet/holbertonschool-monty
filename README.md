@@ -318,7 +318,7 @@ julien@ubuntu:~/monty$
 
 ## :bookmark_tabs: <span id="flowcharts">Flowcharts</a>
 
-PUT THE FLOWSHART SCREENSHOT HERE
+![Image](https://raw.githubusercontent.com/fchavonet/holbertonschool-monty/main/resources/screenshot-flowchart.png)
 
 ## :open_file_folder: <span id="files-description">Files description</span>
 
