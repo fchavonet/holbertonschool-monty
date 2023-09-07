@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		opcode = strtok(line, " \t\n");
-		if (opcode == NULL)
+		if (opcode == NULL || *opcode == '#')
 			continue;
 		else
 			exec_instructions(&stack, opcode, line_number);
