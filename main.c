@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		opcode = strtok(line, " \t\n");
 		if (opcode == NULL)
-			line_number++;
+			continue;
 		else
 			exec_instructions(&stack, opcode, line_number);
 	}
