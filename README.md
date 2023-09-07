@@ -535,7 +535,7 @@ $
 
 ## :blue_book: <span id="man-page">MAN page</a>
 
-Execution: `man_monty_interpreter`
+Execution: `man_monty`
 
 ![Image](https://raw.githubusercontent.com/fchavonet/holbertonschool-monty/main/resources/screenshot-man_page.png)
 
