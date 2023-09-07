@@ -1,0 +1,78 @@
+.TH MONTY_BYTECODES_INTERPRETER 1 "2023, September" "version 1.0" "Monty ByteCodes interpreter User Manual"
+
+.SH NAME
+\fbmonty\fp \- A Monty ByteCode file interpreter.
+
+.SH SYNOPSIS
+.B - ./monty "path_of_the_monty_bytecode_file_name.m"
+
+.SH DESCRIPTION
+Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. 
+.br
+The \fBMonty ByteCode interpreter\fP is a programme that allows the User open a monty ByteCodes files.
+.br
+Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument.
+.br
+The program will read the file then execute the functions called in said file.
+
+.SH FILES
+- \fBadd.C\fP: contains the add function (adds the top two elements of the stack).
+.br
+.br
+- \fBfreestack.c\fP: contains the free_stack function (frees the memory allocated for the stack).
+.br
+.br
+- \fBexec_instructions.c\fP: contains the exec_instructions function (executes a specific opcode on a stack data structure).
+.br
+.br
+- \fBmain.c\fP: contains the main function of the Monty ByteCodes interpreter (entry point).
+.br
+.br
+- \fBmonty.h\fP: includes libraries, structures and function prototypes.
+.br
+.br
+- \fBnop.c\fP: contains the nop function (doesn't do anything :).
+.br
+.br
+- \fBpall.c\fP: contains the pall function ( prints all the values on the stack, starting from the top of the stack).
+.br 
+.br
+- \fBpint.c\fP: contains the pint function (prints the value at the top of the stack, followed by a new line).
+.br
+.br
+- \fBpop.c\fP: contains the pop function (removes the top element of the stack).
+.br
+.br
+- \fBpush.c\fP: contains the is_digit and push functions (pushes an element to the stack).
+.br
+.br
+- \fBswap.c\fP: contains the swap function (swaps the top two elements of the stack). 
+
+.SH REQUIREMENTS
+- \fBgit\fP (\fIhttps://git-scm.com/\fR) version 2.33.0 or newer to clone the repository.
+.br
+- \fBGCC\fP (\fIhttps://gcc.gnu.org/\fR) version 9.4.0 or newer to compile.
+
+.SH INSTALLING
+To install and run Simple Shell, follow these steps:
+
+1. Clone the repository using the following command:
+.br
+    \(dqgit clone \fIhttps://github.com/fchavonet/holbertonschool-monty.git\fR\(dq
+
+2. Compile the program by running the following command:
+.br
+    \(dqgcc -Wall -Werror -Wextra -pedantic *.c -o monty\(dq
+
+3. Run the program with the command in \fBSYNOPSIS\fP.
+
+.SH NOTES
+This monty files interpretor will only execute the functions mentionned in the \fBFILES\fP section above. Other function won't be taken into account.
+
+.SH AUTHORS
+Written by \fBFabien CHAVONET\fP and \fBJeremy MACAL\fP.
+.SH COPYRIGHT
+.nf
+Copyright (C) 2023, Fabien Chavonet and Jeremy Macal.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
