@@ -331,6 +331,7 @@ PUT THE FLOWSHART SCREENSHOT HERE
 |     free_stack.c    |                             contains the free_stack function                             |
 | exec_instructions.c |                          contains the exec_instructions function                         |
 |       main.c        |        contains the main function of the Monty ByteCodes interpreter (entry point)       |
+|      man_monty      |                         man page of the Monty ByteCodes interpreter                      |
 |       monty.h       |                   includes libraries, structures and function prototypes                 |
 |       nop.c         |                                 contains the nop function                                |
 |       pall.c        |                                 contains the pall function                               |
@@ -536,7 +537,7 @@ $
 
 Execution: `man_monty_interpreter`
 
-PUT THE MANPAGE SCREENSHOT HERE
+![Image](https://raw.githubusercontent.com/fchavonet/holbertonschool-monty/main/resources/screenshot-man_page.png)
 
 ## :hearts: <span id="thanks">Thanks</span>
 
