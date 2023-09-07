@@ -23,7 +23,7 @@ int is_digit(char *opcode)
 }
 
 /**
- * push - Pushes an element onto the stack.
+ * push - Pushes an element to the stack.
  *
  * @stack: a pointer to the top of the stack.
  * @line_number: the line number being executed (not used here).

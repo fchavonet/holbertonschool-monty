@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pint - Prints the value at the top of the stack.
+ * pint - prints the value at the top of the stack, followed by a new line.
  *
  * @stack: a pointer to the top of the stack.
  * @line_number: the line number being executed (not used here).
