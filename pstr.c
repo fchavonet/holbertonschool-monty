@@ -1,4 +1,3 @@
-
 #include "monty.h"
 
 /**
@@ -15,12 +14,12 @@ void pstr(stack_t **stack, unsigned int line_number)
 	stack_t *current_node = *stack;
     
     while (current_node != NULL)
-	{ 
+	{
         if ((current_node->n < 65 ) || (current_node->n > 122))
 	    {
             break;
 	    }
-        printf("%c\n", current_node->n);
+        printf("%c", current_node->n);
 		current_node = current_node->next;
 	}
     printf("\n");
