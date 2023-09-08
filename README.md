@@ -99,6 +99,8 @@ src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Cod
 
 `void pchar(stack_t **stack, unsigned int line_number);`: prints the char at the top of the stack, followed by a new line.
 
+`void pstr(stack_t **stack, unsigned int line_number);`: prints the string starting at the top of the stack, followed by a new line.
+
 ## :clipboard: <span id="requirements">Requirements</span>
 
 - Allowed editors: **vim**, **emacs** or Visual Code Studio.

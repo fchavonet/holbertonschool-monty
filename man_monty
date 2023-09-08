@@ -55,6 +55,9 @@ The program will read the file then execute the functions called in said file.
 - \fBpop.c\fP: contains the pop function (removes the top element of the stack).
 .br
 .br
+- \fBpstr.c\fP: contains the pop function (prints the string starting at the top of the stack, followed by a new line.).
+.br
+.br
 - \fBpush.c\fP: contains the is_digit and push functions (pushes an element to the stack).
 .br
 .br
