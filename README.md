@@ -526,7 +526,7 @@ The program will run the bytecodes line by line and stop if either:
 <br>
 - An error occured.
 
-## :computer: <span id="examples">Examples</a>
+## :floppy_disk: <span id="examples">Examples</a>
 
 You will find some examples .m files to test the program in the bytecodes folder:
 
