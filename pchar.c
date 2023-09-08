@@ -13,7 +13,19 @@ void pchar(stack_t **stack, unsigned int line_number)
 	stack_t *current_node = *stack;
 	char character = '0';
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
 	character = current_node->n;
+
+	if ((character < 0) || (character > 126))
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	while (current_node != NULL)
 	{
