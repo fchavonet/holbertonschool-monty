@@ -7,7 +7,7 @@
 .B - ./monty "path_of_the_monty_bytecode_file_name.m"
 
 .SH DESCRIPTION
-Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. 
+Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it.
 .br
 The \fBMonty ByteCode interpreter\fP is a programme that allows the User open a monty ByteCodes files.
 .br
@@ -35,7 +35,7 @@ The program will read the file then execute the functions called in said file.
 .br
 .br
 - \fBpall.c\fP: contains the pall function ( prints all the values on the stack, starting from the top of the stack).
-.br 
+.br
 .br
 - \fBpint.c\fP: contains the pint function (prints the value at the top of the stack, followed by a new line).
 .br
@@ -46,7 +46,7 @@ The program will read the file then execute the functions called in said file.
 - \fBpush.c\fP: contains the is_digit and push functions (pushes an element to the stack).
 .br
 .br
-- \fBswap.c\fP: contains the swap function (swaps the top two elements of the stack). 
+- \fBswap.c\fP: contains the swap function (swaps the top two elements of the stack).
 
 .SH REQUIREMENTS
 - \fBgit\fP (\fIhttps://git-scm.com/\fR) version 2.33.0 or newer to clone the repository.

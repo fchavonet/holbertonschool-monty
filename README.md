@@ -171,18 +171,18 @@ julien@ubuntu:~/monty$
 	</ul>
 
 ```
-julien@ubuntu:~/monty$ cat bytecodes/06.m 
+julien@ubuntu:~/monty$ cat bytecodes/06.m
 push 1
 pint
 push 2
 pint
 push 3
 pint
-julien@ubuntu:~/monty$ ./monty bytecodes/06.m 
+julien@ubuntu:~/monty$ ./monty bytecodes/06.m
 1
 2
 3
-julien@ubuntu:~/monty$ 
+julien@ubuntu:~/monty$
 ```
 </details>
 
@@ -203,7 +203,7 @@ julien@ubuntu:~/monty$
 	</ul>
 
 ```
-julien@ubuntu:~/monty$ cat bytecodes/07.m 
+julien@ubuntu:~/monty$ cat bytecodes/07.m
 push 1
 push 2
 push 3
@@ -214,14 +214,14 @@ pop
 pall
 pop
 pall
-julien@ubuntu:~/monty$ ./monty bytecodes/07.m 
+julien@ubuntu:~/monty$ ./monty bytecodes/07.m
 3
 2
 1
 2
 1
 1
-julien@ubuntu:~/monty$ 
+julien@ubuntu:~/monty$
 ```
 </details>
 
@@ -242,21 +242,21 @@ julien@ubuntu:~/monty$
 	</ul>
 
 ```
-julien@ubuntu:~/monty$ cat bytecodes/09.m 
+julien@ubuntu:~/monty$ cat bytecodes/09.m
 push 1
 push 2
 push 3
 pall
 swap
 pall
-julien@ubuntu:~/monty$ ./monty bytecodes/09.m 
+julien@ubuntu:~/monty$ ./monty bytecodes/09.m
 3
 2
 1
 2
 3
 1
-julien@ubuntu:~/monty$ 
+julien@ubuntu:~/monty$
 ```
 </details>
 
@@ -282,7 +282,7 @@ julien@ubuntu:~/monty$
 	</ul>
 
 ```
-julien@ubuntu:~/monty$ cat bytecodes/12.m 
+julien@ubuntu:~/monty$ cat bytecodes/12.m
 push 1
 push 2
 push 3
@@ -290,7 +290,7 @@ pall
 add
 pall
 
-julien@ubuntu:~/monty$ ./monty bytecodes/12.m 
+julien@ubuntu:~/monty$ ./monty bytecodes/12.m
 3
 2
 1
@@ -335,7 +335,7 @@ julien@ubuntu:~/monty$
 |       monty.h       |                   includes libraries, structures and function prototypes                 |
 |       nop.c         |                                 contains the nop function                                |
 |       pall.c        |                                 contains the pall function                               |
-|       pint.c        |                                 contains the pint function                               | 
+|       pint.c        |                                 contains the pint function                               |
 |       pop.c         |                                 contains the pop function                                |
 |       push.c        |                         contains the is_digit and push functions                         |
 |       swap.c        |                                 contains the swap function                               |
@@ -392,11 +392,11 @@ pall
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/00-mandatory_task0_push\&pall.m 
+$ ./monty bytecodes/00-mandatory_task0_push\&pall.m
 3
 2
 1
-$ 
+$
 ```
 </details>
 
@@ -418,11 +418,11 @@ pint
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/01-mandatory_task1_pint.m.m 
+$ ./monty bytecodes/01-mandatory_task1_pint.m
 1
 2
 3
-$ 
+$
 ```
 </details>
 
@@ -448,7 +448,7 @@ pall
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/02-mandatory_task2_pop.m 
+$ ./monty bytecodes/02-mandatory_task2_pop.m
 3
 2
 1
@@ -476,14 +476,14 @@ pall
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/03-mandatory_task3_swap.m 
+$ ./monty bytecodes/03-mandatory_task3_swap.m
 3
 2
 1
 2
 3
 1
-$ 
+$
 ```
 </details>
 
@@ -505,13 +505,13 @@ pall
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/04-mandatory_task4_add.m 
+$ ./monty bytecodes/04-mandatory_task4_add.m
 3
 2
 1
 5
 1
-$ 
+$
 ```
 </details>
 
@@ -528,8 +528,8 @@ nop
 <b>Output:</b>
 
 ```
-$ ./monty bytecodes/04-mandatory_task4_add.m 
-$ 
+$ ./monty bytecodes/04-mandatory_task4_add.m
+$
 ```
 </details>
 
