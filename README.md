@@ -89,6 +89,16 @@ src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Cod
 
 `void nop(stack_t **stack, unsigned int line_number);`: doesn’t do anything :).
 
+`void sub(stack_t **stack, unsigned int line_number);`: subtracts the top element of the stack from the second top element of the stack.
+
+`void _div(stack_t **stack, unsigned int line_number);`: divides the second top element of the stack by the top element of the stack.
+
+`void mul(stack_t **stack, unsigned int line_number);`: multiplies the second top element of the stack with the top element of the stack.
+
+`void mod(stack_t **stack, unsigned int line_number);`: computes the rest of the division of the second top element of the stack by the top element of the stack.
+
+`void pchar(stack_t **stack, unsigned int line_number);`: prints the char at the top of the stack, followed by a new line.
+
 ## :clipboard: <span id="requirements">Requirements</span>
 
 - Allowed editors: **vim**, **emacs** or Visual Code Studio.
@@ -316,6 +326,145 @@ julien@ubuntu:~/monty$
 
 ### <span id="advanced-tasks">Advanced tasks</a>
 
+<details>
+	<summary>
+		<b>Task 6. sub</b>
+	</summary>
+	Implement the sub opcode.
+	<br><br>
+	<b>The sub opcode</b>
+	<br>
+	The opcode sub subtracts the top element of the stack from the second top element of the stack.
+	<ul>
+		<li>Usage: sub.</li>
+		<li>
+		If the stack contains less than two elements, print the error message L"line_number": can't sub, stack too short, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+		<li>
+		The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+		</li>
+		<ul>
+			<li>The top element of the stack contains the result.</li>
+			<li>The stack is one element shorter.</li>
+		</ul>
+	</ul>
+
+```
+julien@ubuntu:~/monty$ cat bytecodes/19.m 
+push 1
+push 2
+push 10
+push 3
+sub
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/19.m 
+7
+2
+1
+julien@ubuntu:~/monty$
+```
+</details>
+
+<details>
+	<summary>
+		<b>Task 7. dic</b>
+	</summary>
+	Implement the div opcode.
+	<br><br>
+	<b>The div opcode</b>
+	<br>
+	The opcode div divides the second top element of the stack by the top element of the stack.
+	<ul>
+		<li>Usage: div.</li>
+		<li>
+		If the stack contains less than two elements, print the error message L<line_number>: can't div, stack too short, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+		<li>The result is stored in the second top element of the stack, and the top element is removed, so that at the end:</li>
+		<ul>
+			<li>The top element of the stack contains the result.</li>
+			<li>The stack is one element shorter.</li>
+		</ul>
+		<li>
+		If the top element of the stack is 0, print the error message L"line_number": division by zero, followed by a new line, and exit with the status EXIT_FAILURE
+		</li>
+	</ul>
+</details>
+
+<details>
+	<summary>
+		<b>Task 8. mul</b>
+	</summary>
+	Implement the mum opcode.
+	<br><br>
+	<b>The mul opcode</b>
+	<br>
+	The opcode mul multiplies the second top element of the stack with the top element of the stack.
+	<ul>
+		<li>Usage: mul.</li>
+		<li>
+		If the stack contains less than two elements, print the error message L"line_number": can't mul, stack too short, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+		<li>The result is stored in the second top element of the stack, and the top element is removed, so that at the end:</li>
+		<ul>
+			<li>The top element of the stack contains the result.</li>
+			<li>The stack is one element shorter.</li>
+		</ul>
+	</lu>
+</details>
+
+<details>
+	<summary>
+		<b>Task 9. mod</b>
+	</summary>
+	Implement the mod opcode.
+	<br><br>
+	<b>The mod opcode</b>
+	<br>
+	The opcode mod computes the rest of the division of the second top element of the stack by the top element of the stack.
+	<ul>
+		<li>Usage: mod.</li>
+		<li>
+		If the stack contains less than two elements, print the error message L<line_number>: can't mod, stack too short, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+		<li>The result is stored in the second top element of the stack, and the top element is removed, so that at the end:</li>
+		<ul>
+			<li>The top element of the stack contains the result.</li>
+			<li>The top element of the stack contains the result.</li>
+		</ul>
+		<li>
+		If the top element of the stack is 0, print the error message L<line_number>: division by zero, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+	</ul>
+</details>
+
+<details>
+	<summary>
+		<b>Task 10. comments</b>
+	</summary>
+	Every good language comes with the capability of commenting. When the first non-space character of a line is #, treat this line as a comment (don’t do anything).
+</details>
+
+<details>
+	<summary>
+		<b>Task 11. pchar</b>
+	</summary>
+	Implement the pchar opcode.
+	<br><br>
+	<b>The pchar opcode</b>
+	<br>
+	The opcode pchar prints the char at the top of the stack, followed by a new line.
+	<ul>
+		<li>Usage: pchar.</li>
+		<li>The integer stored at the top of the stack is treated as the ascii value of the character to be printed</li>
+		<li>
+		If the value is not in the ascii table (man ascii) print the error message L"line_number": can't pchar, value out of range, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+		<li>
+		If the stack is empty, print the error message L"line_number": can't pchar, stack empty, followed by a new line, and exit with the status EXIT_FAILURE.
+		</li>
+	</ul>
+</details>
+
 ## :bookmark_tabs: <span id="flowcharts">Flowcharts</a>
 
 ![Image](https://raw.githubusercontent.com/fchavonet/holbertonschool-monty/main/resources/screenshot-flowchart.png)
@@ -328,16 +477,21 @@ julien@ubuntu:~/monty$
 |      resources      |                            contains images for README.md file                            |
 |      README.md      |                                 this readme file :wink:                                  |
 |        add.c        |                                contains the add function                                 |
-|     free_stack.c    |                             contains the free_stack function                             |
+|        div.c        |                                contains the div function                                 |
 | exec_instructions.c |                          contains the exec_instructions function                         |
+|     free_stack.c    |                             contains the free_stack function                             |
 |       main.c        |        contains the main function of the Monty ByteCodes interpreter (entry point)       |
 |      man_monty      |                         man page of the Monty ByteCodes interpreter                      |
+|        mod.c        |                                contains the mod function                                 |
 |       monty.h       |                   includes libraries, structures and function prototypes                 |
+|        mul.c        |                                 contains the mul function                                |
 |       nop.c         |                                 contains the nop function                                |
 |       pall.c        |                                 contains the pall function                               |
+|      pchar.c        |                                contains the pchar function                               |
 |       pint.c        |                                 contains the pint function                               |
 |       pop.c         |                                 contains the pop function                                |
 |       push.c        |                         contains the is_digit and push functions                         |
+|       sub.c         |                                 contains the sub function                                |
 |       swap.c        |                                 contains the swap function                               |
 
 ## :computer: <span id="install_use">How to install and use the program</a>
@@ -529,6 +683,171 @@ nop
 
 ```
 $ ./monty bytecodes/04-mandatory_task4_add.m
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>06-advanced_task6_sub.m</b>
+	</summary>
+	<br>
+
+```
+push 1
+push 2
+push 10
+push 3
+sub
+pall
+```
+
+<b>Output:</b>
+
+```
+$  ./monty bytecodes/06-advanced_task6_sub.m
+7
+2
+1
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>07-advanced_task7_div.m</b>
+	</summary>
+	<br>
+
+```
+push 84
+push 2
+div
+pall
+```
+
+<b>Output:</b>
+
+```
+$  ./monty bytecodes/07-advanced_task7_div.m
+42
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>08-advanced_task8_mul.m</b>
+	</summary>
+	<br>
+
+```
+push 21
+push 2
+mul
+pall
+```
+
+<b>Output:</b>
+
+```
+$  ./monty bytecodes/08-advanced_task8_mul.m
+42
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>09-advanced_task9_mod.m</b>
+	</summary>
+	<br>
+
+```
+push 402
+push 98
+mod
+pall
+```
+
+<b>Output:</b>
+
+```
+$  ./monty bytecodes/09-advanced_task9_mod.m
+10
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>10-advanced_task10_hash.m</b>
+	</summary>
+	<br>
+
+```
+push 21
+# This is a comment :)
+push 21
+# 42 is the answer to life, the universe, and everything...
+add
+pall
+#
+```
+
+<b>Output:</b>
+
+```
+$  ./monty bytecodes/10-advanced_task10_hash.m
+42
+$
+```
+</details>
+
+<details>
+	<summary>
+		<b>11-advanced_task11_pchar.m</b>
+	</summary>
+	<br>
+
+```
+push 1 This should not be taken into account
+# Comment
+push 2
+push 3
+       # Another comment
+#
+#Above is an empty comment
+pint
+nop
+push 4
+swap
+pop
+ # Another just below
+      #
+add
+push 1
+sub
+push 2
+div
+push 12
+mul
+push 9
+mod
+push 65
+pchar
+pall
+```
+
+<b>Output:</b>
+
+```
+$ ./monty bytecodes/11-advanced_task11_pchar.m 
+3
+A
+65
+6
+1
 $
 ```
 </details>

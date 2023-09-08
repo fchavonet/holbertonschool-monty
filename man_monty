@@ -19,22 +19,34 @@ The program will read the file then execute the functions called in said file.
 - \fBadd.C\fP: contains the add function (adds the top two elements of the stack).
 .br
 .br
-- \fBfreestack.c\fP: contains the free_stack function (frees the memory allocated for the stack).
+- \fBdiv.C\fP: contains the div function (divides the second top element of the stack by the top element of the stack).
 .br
 .br
 - \fBexec_instructions.c\fP: contains the exec_instructions function (executes a specific opcode on a stack data structure).
 .br
 .br
+- \fBfreestack.c\fP: contains the free_stack function (frees the memory allocated for the stack).
+.br
+.br
 - \fBmain.c\fP: contains the main function of the Monty ByteCodes interpreter (entry point).
+.br
+.br
+- \fBmod.c\fP: contains the mod function (computes the rest of the division of the second top element of the stack by the top element of the stack.).
 .br
 .br
 - \fBmonty.h\fP: includes libraries, structures and function prototypes.
 .br
 .br
+- \fBmul.c\fP: contains the mul function (multiplies the second top element of the stack with the top element of the stack.).
+.br
+.br
 - \fBnop.c\fP: contains the nop function (doesn't do anything :).
 .br
 .br
-- \fBpall.c\fP: contains the pall function ( prints all the values on the stack, starting from the top of the stack).
+- \fBpall.c\fP: contains the pall function (prints all the values on the stack, starting from the top of the stack).
+.br
+.br
+- \fBpchar.c\fP: contains the pchar function (prints the char at the top of the stack, followed by a new line).
 .br
 .br
 - \fBpint.c\fP: contains the pint function (prints the value at the top of the stack, followed by a new line).
@@ -44,6 +56,9 @@ The program will read the file then execute the functions called in said file.
 .br
 .br
 - \fBpush.c\fP: contains the is_digit and push functions (pushes an element to the stack).
+.br
+.br
+- \fBsub.c\fP: contains the sub function (subtracts the top element of the stack from the second top element of the stack).
 .br
 .br
 - \fBswap.c\fP: contains the swap function (swaps the top two elements of the stack).
