@@ -22,6 +22,7 @@ int exec_instructions(stack_t **stack, char *opcode, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", _div},
 		{"mul", mul},
 		{"pchar", pchar},
 		{NULL, NULL}
