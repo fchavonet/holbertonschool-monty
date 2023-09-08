@@ -30,9 +30,17 @@ int is_digit(char *opcode)
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *new_node = NULL;
 	char *number_string = NULL;
 	int number = 0;
+
+	new_node = malloc(sizeof(stack_t));
+
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 
 	number_string = strtok(NULL, " \t\n");
 
@@ -43,12 +51,6 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	number = atoi(number_string);
-
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
 
 	new_node->n = number;
 	new_node->prev = NULL;
