@@ -27,9 +27,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	while (current_node != NULL)
-	{
-		printf("%c\n", character);
-		current_node = current_node->next;
-	}
+	printf("%c\n", character);
+	current_node = current_node->next;
 }
